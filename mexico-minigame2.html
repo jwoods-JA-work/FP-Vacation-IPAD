@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid Expedition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="pyramid-game-screen">
+
+    <div class="price-tag">
+        <div class="currency">$</div>
+        <div class="amount">4000</div>
+    </div>
+
+    <h1>Explore the Pyramid!</h1>
+    <p>Memorize the glowing path before it disappears!</p>
+
+<div id="maze">
+    <div class="maze-row">
+        <div id="t-0-0" class="tile" onclick="selectTile(0,0,this)"></div>
+        <div id="t-0-1" class="tile" onclick="selectTile(0,1,this)"></div>
+        <div id="t-0-2" class="tile" onclick="selectTile(0,2,this)"></div>
+    </div>
+
+    <div class="maze-row">
+        <div id="t-1-0" class="tile" onclick="selectTile(1,0,this)"></div>
+        <div id="t-1-1" class="tile" onclick="selectTile(1,1,this)"></div>
+        <div id="t-1-2" class="tile" onclick="selectTile(1,2,this)"></div>
+    </div>
+
+    <div class="maze-row">
+        <div id="t-2-0" class="tile" onclick="selectTile(2,0,this)"></div>
+        <div id="t-2-1" class="tile" onclick="selectTile(2,1,this)"></div>
+        <div id="t-2-2" class="tile" onclick="selectTile(2,2,this)">💎</div>
+    </div>
+</div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

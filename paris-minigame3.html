@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelin Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="michelin-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    <h1>VIP Perfect Serve</h1>
+    <p>Click "SERVE" when the moving plate is in the GREEN zone! Serve 3 courses.</p>
+    
+    <div id="timing-game">
+        <div id="target-zone"></div>
+        <div id="moving-plate">🍽️</div>
+    </div>
+    <button onclick="checkServe()" id="serve-btn">SERVE!</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel the World - Map 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="map-screen">
+        
+        <div class="price-tag">
+            <div class="currency">$</div>
+            <div class="amount"></div> </div>
+
+        <div class="map-card">
+            <h1>World Map</h1>
+            <p>
+                Two locations down, two to go! Click the pin to fly to your third destination.
+            </p>
+        </div>
+
+        <div class="map-container">
+            <img src="Images/worldmap1.png" class="map">
+            
+            <img src="Images/plane.png" class="plane" style="left: 570px; top: 170px; transition: transform 1.5s ease-in-out;">
+
+            <svg class="routes" viewBox="0 0 900 500">
+                <path d="M150 230 Q300 100 430 180" />
+                <path d="M430 180 Q500 250 450 320" />
+                <path d="M450 320 Q600 200 700 240" />
+            </svg>
+
+            <div class="marker-start" style="display: flex; align-items: center; justify-content: center; font-size: 50px; cursor: default; animation: none;">✅</div>
+            
+            <div class="marker-1" style="position: absolute; display: flex; align-items: center; justify-content: center; font-size: 50px; cursor: default;">✅</div>
+            <img src="Images/pin.png" class="marker marker-2" style="animation: heartbeat 1.5s infinite; cursor: pointer; width: 80px; height: auto;" onclick="flyToLocation3()">
+            
+            <div class="marker marker-3"></div>
+
+            <img src="Images/path.png" class="path">
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

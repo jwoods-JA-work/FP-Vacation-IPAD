@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="safari-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    
+    <h1>Big 5 Safari Tracker</h1>
+    <p>Click the savanna grass to track the hidden animal. <br> Listen to your radar! Being totally lost (COLD) wastes $10 of fuel.</p>
+    
+    <h2 id="tracker-radar">Radar: 📡 Scanning...</h2>
+    
+    <div id="savanna-grass" onclick="trackAnimal(event)">     
+        <div id="scanner-glass">🔍</div> 
+    </div>
+
+    
+    <p style="color: white; font-size: 24px; font-family: 'Titan One', sans-serif;">
+        Animals Found: <span id="animals-found">0</span> / 3
+    </p>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

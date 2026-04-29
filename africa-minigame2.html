@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cablecar-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    <h1>Cable Car Stabilizer</h1>
+    <p>The car is swinging! Press the matching arrow to steer into the wind and stabilize it!</p>
+    
+    <div id="cable-car-container">
+        <div id="cable-line"></div>
+        <div id="cable-car">🚠</div>
+    </div>
+    
+    <div id="wind-controls">
+        <button onclick="checkWind('⬅️')">⬅️</button>
+        <button onclick="checkWind('⬆️')">⬆️</button>
+        <button onclick="checkWind('⬇️')">⬇️</button>
+        <button onclick="checkWind('➡️')">➡️</button>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

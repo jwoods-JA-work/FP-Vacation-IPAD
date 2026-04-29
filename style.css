@@ -1,0 +1,1701 @@
+body {
+    margin:0;
+}
+
+/*Black Background*/
+#start-screen {
+    /* BLACK + DIAGONAL STRIPES */
+    background: repeating-linear-gradient(
+        -45deg,          /* direction: down-left */
+        #000000,         /* dark stripe */
+        #000000 10px,
+        #111111 10px,    /* slightly lighter stripe */
+        #111111 20px
+    );    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+/*White card*/
+.start-card {
+    width: 900px;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 2;
+
+    /* BASE COLOR */
+    background-color: #ffffff;
+
+    /* DIAMOND PATTERN */
+    background-image:
+        linear-gradient(45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(-45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e6e6e6 75%),
+        linear-gradient(-45deg, transparent 75%, #e6e6e6 75%);
+
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.start-card h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.start-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.start-card button {
+    font-family: 'Titan One', sans-serif;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.start-card button:hover {
+    background: #c0392b;
+}
+
+.cloud {
+    position: absolute;
+    background:#2883d4;
+    border-radius: 50%;
+    z-index: 1;
+}
+/* TOP LEFT CLOUD */
+.cloud-top-left {
+    width: 220px;
+    height: 120px;
+    top: 140px;
+    left: 160px;
+
+    /* creates "puffy" cloud bumps */
+    box-shadow:
+        60px 0 #2883d4,
+        120px 20px #2883d4,
+        30px 40px #2883d4;
+}
+
+/* BOTTOM RIGHT CLOUD */
+.cloud-bottom-right {
+    width: 220px;
+    height: 120px;
+    bottom: 160px;
+    right: 240px;
+
+    box-shadow:
+        60px 0 #2883d4,
+        120px 20px #2883d4,
+        30px 40px #2883d4;
+}
+.flag-carousel {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* moving strip */
+.flag-track {
+    display: flex;
+    width: max-content;
+    animation: scrollFlags 10s linear infinite;
+}
+
+.flag-set {
+    display: flex;
+}
+
+/* flag styling */
+.flag-set img {
+    width: 90px;
+    height: auto;
+    margin: 0 25px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+/* animation */
+@keyframes scrollFlags {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- MAP SCREEN STYLES --- */
+
+#map-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.map-card {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+
+    /* remove the white box */
+    background: none;
+    padding: 0;
+    width: 100%;
+}
+
+.map-card h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.map-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.map-container {
+    position: relative;
+    width: 1200px;
+    transform: scale(1.15);
+    transform-origin: center;
+    margin-top: 120px;
+
+}
+
+.map {
+    width: 100%;
+}
+
+/* plane */
+.plane {
+    position: absolute;
+    width: 180px;
+    left: 20px;
+    top: 20px;
+    transition: transform 1.5s ease-in-out;
+    z-index: 5;
+}
+.fly-to-mexico {
+    transform: translate(130px, 240px) rotate(20deg);
+}
+
+/* markers */
+.marker {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+/* create the X using two lines */
+.marker::before,
+.marker::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background: red;
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+}
+
+/* first line */
+.marker::before {
+    transform: rotate(45deg);
+}
+
+/* second line */
+.marker::after {
+    transform: rotate(-45deg);
+}
+
+/* positions (adjust these visually) */
+.marker-start {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    left: 150px;
+    top: 260px;
+
+  animation: heartbeat 1.5s infinite; /* Duration and repeat count */
+
+  cursor: pointer;
+}
+
+@keyframes heartbeat {
+      0% { transform: scale(1); }
+  15% { transform: scale(1.15); } /* First rapid pulse */
+  30% { transform: scale(1); }
+  45% { transform: scale(1.25); } /* Second larger pulse */
+  70% { transform: scale(1); }
+  100% { transform: scale(1); } /* Pause between beats */
+}
+
+.marker-1 {
+    left: 570px;
+    top: 220px;
+}
+
+.marker-2 {
+    left: 570px;
+    top: 380px;
+}
+
+.marker-3 {
+    left: 900px;
+    top: 280px;
+}
+
+.routes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.routes path {
+    fill: none;
+    stroke: #2d7dd2; /* blue like your screenshot */
+    stroke-width: 4;
+
+    /* dotted effect */
+    stroke-dasharray: 8 10;
+
+    /* rounded dots */
+    stroke-linecap: round;
+}
+
+/* Importing a rounded, chunky font to match the image */
+
+/* --- PRICE TAG HUD --- */
+.price-tag {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 10; /* Keeps it floating above the map */
+  
+  display: inline-flex;
+  align-items: stretch; 
+  
+  /* Colors & Scaled-down Borders */
+  background-color: #ffc52d; 
+  border: 6px solid #111111;
+  border-radius: 60px; 
+  
+  /* Scaled-down 3D shadow */
+  box-shadow: 8px 8px 0px #111111;
+  
+  font-family: 'Fredoka', 'Titan One', sans-serif;
+  color: #3f6619; 
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Scaled-down Font and Spacing */
+  font-size: 45px;
+  padding: 5px 20px 5px 25px;
+  
+  border-right: 6px solid #111111;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Scaled-down Font and Spacing */
+  font-size: 55px;
+  padding: 5px 30px 5px 20px;
+  letter-spacing: 1px;
+}
+/**************** Mexico *************************/
+
+#plane-ticket-screen {
+    /* BLACK + DIAGONAL STRIPES */
+    background: repeating-linear-gradient(
+        -45deg,          /* direction: down-left */
+        #000000,         /* dark stripe */
+        #000000 10px,
+        #111111 10px,    /* slightly lighter stripe */
+        #111111 20px
+    );    
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+
+}
+
+.plane-ticket-card {
+    width: min(900px, 90vw);
+    min-height: 700px;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 2;
+    /* BASE COLOR */
+    background-color: #ffffff;
+
+    /* DIAMOND PATTERN */
+    background-image:
+        linear-gradient(45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(-45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e6e6e6 75%),
+        linear-gradient(-45deg, transparent 75%, #e6e6e6 75%);
+
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.plane-ticket-card h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 30px;
+}
+
+.mexico-city {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    left: 620px;
+
+      border: 4px solid #111111;
+  border-radius: 30px; 
+  
+  /* Scaled-down 3D shadow */
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.economy-class {
+    position: absolute;
+    width: 400px;
+    left: 300px;
+    top: 400px;
+    cursor: pointer;
+}
+
+.business-class {
+    position: absolute;
+    width: 400px;
+    left: 800px;
+    top: 400px;
+    cursor: pointer;
+
+}
+
+.first-class {
+    position: absolute;
+    width: 400px;
+    left: 550px;
+    top: 600px;
+    cursor: pointer;
+
+}
+
+/**************** Mexico Games *************************/
+
+#food-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    text-align: center;
+    padding-top: 40px;
+}
+
+#food-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#food-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Added a small style for your new recipe text to match your font themes */
+#recipe-display {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 22px;
+}
+
+#build-area {
+    width: 400px;
+    height: 250px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    border: 5px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ingredients {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.ingredients img {
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.ingredients img:hover {
+    transform: scale(1.1);
+}
+
+#mexico-activity-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.activity-header {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.activity-header h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+}
+
+.activity-header p {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+}
+
+.mexico-scene {
+    position: relative;
+    width: min(1200px, 90vw);
+    height: min(700px, 65vh);
+    margin-top: 20px;
+}
+
+.mexico-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+
+.activity-icon {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.activity-icon:hover {
+    transform: scale(1.1);
+}
+.food-option {
+    left: 50px;
+    bottom: 80px;
+}
+
+.pyramid-option {
+    left: 440px;
+    bottom: 80px;
+}
+
+.boat-option {
+    left: 830px;
+    bottom: 80px;
+}
+
+.activity-option {
+    position: absolute;
+    text-align: center;
+    width: 350px;
+}
+
+.activity-option button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    font-family: 'Titan One', sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px black;
+}
+
+.activity-option button:hover {
+    transform: scale(1.05);
+}
+
+
+#pyramid-game-screen {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    padding-top: 40px;
+}
+
+#pyramid-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+}
+
+#pyramid-game-screen p {
+    color: white;
+    font-size: 24px;
+}
+
+#maze {
+    margin: 40px auto;
+    width: fit-content;
+}
+
+.maze-row {
+    display: flex;
+}
+
+.tile {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    border-radius: 15px;
+    border: 4px solid black;
+}
+
+.wall {
+    background: #6c584c;
+}
+
+.player {
+    background: #90be6d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.treasure {
+    background: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.safe {
+    background: #f4d35e;
+    cursor: pointer;
+}
+
+.hidden-path {
+    background: #6c584c !important; /* same as wall */
+    cursor: pointer;
+}
+
+#yacht-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#yacht-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+#yacht-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+#ocean-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px); /* 4 columns */
+    gap: 15px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.ocean-tile {
+    width: 120px;
+    height: 120px;
+    background: #2883d4; /* Deep ocean blue */
+    border: 4px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px; /* Size of the emojis */
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.ocean-tile:hover:not(.revealed) {
+    transform: scale(1.05);
+    background: #3a9ef2;
+}
+
+.ocean-tile.revealed {
+    cursor: default;
+    transform: none;
+}
+
+/**************** Paris *************************/
+
+.paris-city {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    left: 620px;
+
+      border: 4px solid #111111;
+  border-radius: 30px; 
+  
+  /* Scaled-down 3D shadow */
+  box-shadow: 5px 5px 0px #111111;
+}
+
+#paris-activity-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.paris-scene {
+    position: relative;
+    width: min(1200px, 90vw);
+    height: min(700px, 65vh);
+    margin-top: 20px;
+}
+
+.paris-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+
+.tower-option {
+    left: 50px;
+    bottom: 80px;
+}
+
+.museum-option {
+    left: 440px;
+    bottom: 80px;
+}
+
+.dining-option {
+    left: 830px;
+    bottom: 80px;
+}
+
+/* --- EIFFEL TOWER SNAP --- */
+
+
+#eiffel-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #736d6d 20px
+    );
+
+    text-align: center;
+    padding-top: 40px;
+}
+
+#eiffel-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#eiffel-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#camera-view {
+    width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    background: #87CEEB; /* Sky blue */
+    border: 8px solid #333;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.popup-target {
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s;
+}
+.popup-target:active { transform: scale(0.9); }
+
+/* --- LOUVRE ART MATCH --- */
+#louvre-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #736d6d 20px
+    );
+
+    text-align: center;
+    padding-top: 40px;
+}
+
+#louvre-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#louvre-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#art-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 130px;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.art-card {
+    width: 200px;
+    height: 200px;
+    background: #2883d4;
+    border: 4px solid #111;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Hide the emoji by default */
+.hidden-symbol {
+    opacity: 0; 
+    transition: opacity 0.2s ease;
+}
+
+/* When the card is flipped, show the background and emoji */
+.art-card.flipped {
+    background: white;
+    cursor: default;
+}
+
+.art-card.flipped .hidden-symbol {
+    opacity: 1;
+}
+
+/* --- MICHELIN VIP SERVE --- */
+#timing-game {
+    width: 900px;
+    height: 170px;
+    background: #444;
+    border: 5px solid #111;
+    border-radius: 40px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#target-zone {
+    width: 170px;
+    height: 100%;
+    background: #90be6d; /* Green target */
+    position: absolute;
+    left: 200px; /* Center of the 500px bar */
+}
+
+#moving-plate {
+    position: absolute;
+    font-size: 150px;
+    top: 2px;
+    left: 0;
+}
+
+#serve-btn {
+    font-family: 'Titan One', sans-serif;
+    font-size: 30px;
+    padding: 15px 40px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+}
+#serve-btn:hover { transform: scale(1.05); }
+
+
+#louvre-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    text-align: center;
+    padding-top: 40px;
+}
+
+#michelin-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#michelin-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#michelin-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    text-align: center;
+    padding-top: 40px;
+}
+
+#michelin-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px; 
+}
+
+#michelin-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.price-tag-africa {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10; /* Keeps it floating above the map */
+  
+  display: inline-flex;
+  align-items: stretch; 
+  
+  /* Colors & Scaled-down Borders */
+  background-color: #ffc52d; 
+  border: 6px solid #111111;
+  border-radius: 60px; 
+  
+  /* Scaled-down 3D shadow */
+  box-shadow: 8px 8px 0px #111111;
+  
+  font-family: 'Fredoka', 'Titan One', sans-serif;
+  color: #3f6619; 
+}
+
+
+.africa-city {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    left: 620px;
+
+      border: 4px solid #111111;
+  border-radius: 30px; 
+  
+  /* Scaled-down 3D shadow */
+  box-shadow: 5px 5px 0px #111111;
+}
+
+
+#africa-activity-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.africa-scene {
+    position: relative;
+    width: min(1200px, 90vw);
+    height: min(700px, 65vh);
+    margin-top: 20px;
+}
+
+.africa-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+
+/* --- PENGUIN PHOTOGRAPHER --- */
+#penguin-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#penguin-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+#penguin-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#viewfinder {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto 30px auto;
+    background: #89cff0; /* Bright beach sky */
+    border: 10px solid #222;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Creating the camera viewfinder crosshairs */
+.camera-corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.7);
+}
+.top-left { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+.top-right { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+.bottom-right { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+#penguin-subject {
+    font-size: 150px;
+    /* Blur is controlled by JavaScript! */
+}
+
+#camera-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#focus-slider {
+    width: 400px;
+    height: 10px;
+    background: #fff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+#snap-btn {
+    font-family: 'Titan One', sans-serif;
+    font-size: 28px;
+    padding: 15px 40px;
+    background: #f4d35e; /* Yellow button */
+    color: #111;
+    border: 4px solid #111;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+    transition: transform 0.1s;
+}
+#snap-btn:active { transform: translateY(4px); box-shadow: 0px 0px 0px #111; }
+
+
+/* --- VISUAL CABLE CAR STABILIZER --- */
+
+
+#cablecar-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#cablecar-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+#cablecar-game-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+#cable-car-container {
+    width: 300px;
+    height: 250px;
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The wire the car hangs from */
+#cable-line {
+    width: 100%;
+    height: 8px;
+    background: #111;
+    position: absolute;
+    top: 20px;
+    border-radius: 4px;
+}
+
+#cable-car {
+    font-size: 100px;
+    margin-top: 10px; /* Hangs just below the line */
+    transition: transform 0.3s ease-in-out;
+    transform-origin: top center; /* Makes it swing from the top! */
+    text-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+}
+
+#wind-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#wind-controls button {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    background: #2883d4;
+    border: 4px solid #111;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+    transition: transform 0.1s;
+}
+#wind-controls button:active { 
+    transform: translateY(4px); 
+    box-shadow: 0px 0px 0px #111; 
+}
+/* --- BIG 5 SAFARI TRACKER --- */
+#safari-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#safari-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#safari-game-screen p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#tracker-radar {
+    color: #f4d35e;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    background: #111;
+    padding: 10px 30px;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 3px solid #333;
+}
+
+/* Update your existing savanna-grass class to hide the cursor */
+#savanna-grass {
+    width: 500px;
+    height: 300px;
+    background: #a3b162; 
+    border: 8px solid #3f6619;
+    border-radius: 15px;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: inset 0px 0px 30px rgba(0,0,0,0.3);
+    overflow: hidden; /* Keeps the scanner inside the box */
+    
+    cursor: none; /* HIDES THE NORMAL MOUSE! */
+}
+
+/* Add this new style for the scanner */
+#scanner-glass {
+    position: absolute;
+    font-size: 50px;
+    pointer-events: none; /* Lets clicks pass right through the emoji */
+    transform: translate(-50%, -50%); /* Centers the glass exactly on the mouse coordinates */
+    display: none; /* Hidden until the mouse enters the box */
+    z-index: 10;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.found-animal {
+    position: absolute;
+    font-size: 60px;
+    transform: translate(-50%, -50%); /* Centers the emoji perfectly on the mouse click */
+    animation: popUp 0.5s ease-out;
+}
+
+@keyframes popUp {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+#japan-activity-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.japan-scene {
+    position: relative;
+    width: min(1200px, 90vw);
+    height: min(700px, 65vh);
+    margin-top: 20px;
+}
+
+.japan-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+
+#claw-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#claw-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#claw-game-screen p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- SHIBUYA CLAW MACHINE --- */
+#claw-machine {
+    width: 600px;
+    height: 400px;
+    background: #ffb7b2; /* Kawaii pink */
+    border: 8px solid #333;
+    border-radius: 20px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.2);
+}
+
+#the-claw {
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    transition: top 0.5s ease-in; /* Makes the drop smooth */
+}
+
+#the-prize {
+    font-size: 60px;
+    position: absolute;
+    bottom: 10px;
+    left: 265px; /* Centered in the 400px box */
+}
+
+#drop-btn, #pour-btn, #push-btn {
+    font-family: 'Titan One', sans-serif;
+    font-size: 28px;
+    padding: 15px 40px;
+    background: #e74c3c;
+    color: white;
+    border: 4px solid #111;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+}
+#drop-btn:active, #pour-btn:active, #push-btn:active { transform: translateY(4px); box-shadow: 0px 0px 0px #111; }
+
+/* --- ZEN TEA CEREMONY --- */
+#thermometer {
+    width: 60px;
+    height: 300px;
+    background: linear-gradient(to top, #87ceeb, #f4d35e, #e74c3c); /* Cold to Hot */
+    border: 6px solid #333;
+    border-radius: 30px;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: inset 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+#zen-zone {
+    position: absolute;
+    bottom: 40%; /* Starts 40% from the bottom */
+    height: 20%; /* Takes up 20% of the thermometer */
+    width: 100%;
+    background: rgba(144, 190, 109, 0.8); /* Green */
+    border-top: 4px solid #111;
+    border-bottom: 4px solid #111;
+}
+
+#temp-indicator {
+    width: 90px;
+    height: 12px;
+    background: #111;
+    border-radius: 5px;
+    position: absolute;
+    left: -15px; /* Sticks out the sides of the thermometer */
+    bottom: 50%; /* Starts exactly in the middle */
+    transition: bottom 0.1s linear;
+}
+
+#zen-progress-container {
+    width: 400px;
+    height: 25px;
+    background: #222;
+    border: 4px solid #111;
+    border-radius: 15px;
+    margin: 10px auto 20px auto;
+    overflow: hidden;
+}
+
+#zen-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #90be6d; /* Progress fills up green */
+    transition: width 0.1s linear;
+}
+
+#start-tea-btn {
+    font-family: 'Titan One', sans-serif;
+    font-size: 24px;
+    padding: 15px 40px;
+    background: #90be6d;
+    color: #111;
+    border: 4px solid #111;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+}
+
+#cool-btn {
+    font-family: 'Titan One', sans-serif;
+    font-size: 24px;
+    padding: 15px 40px;
+    background: #87ceeb;
+    color: #111;
+    border: 4px solid #111;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+    display: none; /* Hidden until the game starts */
+}
+#start-tea-btn:active, #cool-btn:active { transform: translateY(4px); box-shadow: 0px 0px 0px #111; }
+
+/* --- VIP SUMO SHOWDOWN --- */
+#sumo-ring {
+    width: 900px;
+    height: 300px;
+    background: #d4a373; /* Sand color */
+    border: 6px solid #8b5a2b;
+    border-radius: 50px;
+    margin: 40px auto;
+    position: relative;
+}
+
+#sumo-wrestler {
+    font-size: 150px;
+    position: absolute;
+    top: 5px;
+    left: 50%; /* Starts perfectly in the middle */
+    transform: translateX(-50%);
+    transition: left 0.1s;
+}
+
+
+/* --- ZEN TEA CEREMONY SCREEN BACKGROUND --- */
+#tea-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #fdfbf7; /* A soft, clean Japanese paper white */
+    text-align: center;
+    padding-top: 40px;
+}
+
+#tea-game-screen h1 {
+    color: #e74c3c; /* Deep red looks amazing on white */
+    font-family: 'Titan One', sans-serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+#tea-game-screen p {
+    color: #333333; /* Dark gray text so it is readable on the white background! */
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+}
+
+#sumo-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+    text-align: center;
+    padding-top: 40px;
+}
+
+#sumo-game-screen h1 {
+    color: #2883d4;
+    font-family: 'Titan One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#sumo-game-screen p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- END SCREENS (VICTORY & GAME OVER) --- */
+#victory-screen, #gameover-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #111111 10px,
+        #111111 20px
+    );
+}
+
+.end-card {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+    border: 8px solid #111;
+}
+
+.end-card h1 {
+    font-family: 'Titan One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.victory-card h1 { color: #90be6d; } /* Green text for winning */
+.gameover-card h1 { color: #e74c3c; } /* Red text for losing */
+
+.end-card h2 {
+    font-family: 'DM Sans', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.end-card p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.final-budget-display {
+    background: #f4d35e;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 4px solid #111;
+}
+
+.final-budget-display p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #111;
+}
+
+.final-price {
+    display: inline-flex;
+    transform: scale(1.2); /* Makes the final tag slightly larger */
+    margin-top: 10px;
+}
+
+.end-card button {
+    font-family: 'Titan One', sans-serif;
+    font-size: 24px;
+    padding: 15px 40px;
+    background: #2883d4;
+    color: white;
+    border: 4px solid #111;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+    transition: transform 0.1s;
+}
+
+.end-card button:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 0px #111;
+}
+
+/* --- SECRET WINNER CODES --- */
+.secret-codes {
+    margin: 30px auto;
+    background: #fdfbf7;
+    padding: 20px;
+    border-radius: 15px;
+    border: 4px dashed #90be6d; /* Green dashed border like a coupon */
+}
+
+.secret-codes h3 {
+    font-family: 'Titan One', sans-serif;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.secret-codes p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.code-box {
+    background: #111; /* Dark background to make the gold pop */
+    color: #f4d35e; /* Golden text */
+    font-family: 'Titan One', sans-serif;
+    font-size: 24px;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    width: 85%;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    user-select: all; /* Makes it so if they click the text, it highlights the whole code instantly to copy! */
+}

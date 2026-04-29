@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Activities</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="japan-activity-screen">
+
+    <div class="price-tag">
+        <div class="currency">$</div>
+        <div class="amount">4,000</div>
+    </div>
+
+    <div class="activity-header">
+        <h1>Explore Tokyo!</h1>
+        <p>Choose an activity for your family adventure.</p>
+    </div>
+
+    <div class="japan-scene">
+
+        <!-- background -->
+        <img src="Images/Japan/japan-background.png" class="japan-background">
+
+            <!-- First Activity -->
+            <div class="activity-option tower-option">
+                <img src="Images/Japan/Japan Activity/japan-activity1.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(150,'japan-minigame1.html')">
+                    Select - $150
+                </button>
+            </div>
+
+            <!-- Second Activity -->
+            <div class="activity-option museum-option">
+                <img src="Images/Japan/Japan Activity/japan-activity2.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(200,'japan-minigame2.html')">
+                    Select - $200
+                </button>
+            </div>
+
+            <!-- Third Activity -->
+            <div class="activity-option dining-option">
+                <img src="Images/Japan/Japan Activity/japan-activity3.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(400,'japan-minigame3.html')">
+                    Select - $400
+                </button>
+            </div>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

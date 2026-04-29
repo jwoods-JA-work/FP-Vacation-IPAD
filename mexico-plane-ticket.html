@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Travel the World</title>
+
+        <link href = "https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div id = "plane-ticket-screen"> 
+            <div class = "plane-ticket-card">
+                <h1>
+                    You start your travels close to home. <br>
+                    Choose which class you want to fly and head to Mexico!
+                </h1>
+                <div class="price-tag">
+                    <div class="currency">$</div>
+                    <div class="amount">4000</div>
+                </div>
+                <img src="Images/Mexico/mexico-city.png" class="mexico-city">
+                <img src = "Images/Mexico/Mexico Plane Tickets/mexico-economy-class.png" class = "economy-class" onclick = "buyTicket(300,'mexico-activity.html')">
+                <img src = "Images/Mexico/Mexico Plane Tickets/mexico-business-class.png" class = "business-class" onclick = "buyTicket(600,'mexico-activity.html')">
+                <img src = "Images/Mexico/Mexico Plane Tickets/mexico-first-class.png" class = "first-class" onclick = "buyTicket(900,'mexico-activity.html')">
+            </div>
+        </div>
+        <script src = "game.js"></script>
+    </body>
+</html>

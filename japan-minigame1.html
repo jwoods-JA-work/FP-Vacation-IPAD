@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="claw-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    <h1>Kawaii Claw Machine</h1>
+    <p>Wait for the claw to line up with the Ramen, then click DROP!</p>
+    
+    <div id="claw-machine">
+        <div id="the-claw">⬇️</div>
+        <div id="the-prize">🍜</div>
+    </div>
+    
+    <button onclick="dropClaw()" id="drop-btn">DROP CLAW!</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

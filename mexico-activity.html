@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexico Activities</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="mexico-activity-screen">
+
+    <div class="price-tag">
+        <div class="currency">$</div>
+        <div class="amount">2,500</div>
+    </div>
+
+    <div class="activity-header">
+        <h1>Explore Mexico!</h1>
+        <p>Choose an activity for your family adventure.</p>
+    </div>
+
+    <div class="mexico-scene">
+
+        <!-- background -->
+        <img src="Images/Mexico/mexico-background.png" class="mexico-background">
+
+            <!-- First Activity -->
+            <div class="activity-option food-option">
+                <img src="Images/Mexico/Mexico Activity/mexico-activity1.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(150,'mexico-minigame1.html')">
+                    Select - $150
+                </button>
+            </div>
+
+            <!-- Second Activity -->
+            <div class="activity-option pyramid-option">
+                <img src="Images/Mexico/Mexico Activity/mexico-activity2.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(200,'mexico-minigame2.html')">
+                    Select - $200
+                </button>
+            </div>
+
+            <!-- Third Activity -->
+            <div class="activity-option boat-option">
+                <img src="Images/Mexico/Mexico Activity/mexico-activity3.png"
+                    class="activity-icon">
+
+                <button onclick="buyActivity(400,'mexico-minigame3.html')">
+                    Select - $400
+                </button>
+            </div>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

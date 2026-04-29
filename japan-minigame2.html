@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="tea-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    
+    <h1>Perfect Temperature</h1>
+    <p>Keep the temperature in the GREEN zone for 5 seconds to brew perfect tea! <br> Don't let it boil or freeze!</p>
+    
+    <div id="zen-progress-container">
+        <div id="zen-progress-bar"></div>
+    </div>
+    
+    <div id="thermometer">
+        <div id="zen-zone"></div>
+        <div id="temp-indicator"></div>
+    </div>
+    
+    <button onclick="startTeaGame()" id="start-tea-btn">▶️ START CEREMONY</button>
+    <button onclick="coolDown()" id="cool-btn">❄️ COOL DOWN!</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

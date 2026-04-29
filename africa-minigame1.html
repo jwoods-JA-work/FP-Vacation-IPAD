@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="penguin-game-screen">
+    <div class="price-tag">
+        <div class="currency">$</div><div class="amount"></div>
+    </div>
+    
+    <h1>Penguin Photography</h1>
+    <p>Slide the lens focus until the penguin is perfectly clear, then SNAP the photo!</p>
+    
+    <div id="viewfinder">
+        <div class="camera-corner top-left"></div>
+        <div class="camera-corner top-right"></div>
+        <div class="camera-corner bottom-left"></div>
+        <div class="camera-corner bottom-right"></div>
+        
+        <div id="penguin-subject">🐧</div>
+    </div>
+    
+    <div id="camera-controls">
+        <label for="focus-slider" style="color: white; font-size: 20px; font-family: 'Titan One', sans-serif;">LENS FOCUS:</label>
+        <input type="range" id="focus-slider" min="1" max="100" value="10">
+        
+        <button onclick="snapPhoto()" id="snap-btn">📸 SNAP PHOTO!</button>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
