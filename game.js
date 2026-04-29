@@ -583,7 +583,7 @@ function initMichelinGame() {
     }
     
     coursesServed = 0;
-    plateSpeed = 10; // Resets speed
+    plateSpeed = 20; // Resets speed
     animatePlate();
 }
 
@@ -594,7 +594,7 @@ function checkServe() {
 
     if (plateCenter >= 200 && plateCenter <= 370) {
         coursesServed++;
-        plateSpeed += 5; // Make it move faster each time!
+        plateSpeed += 10; // Make it move faster each time!
         
         if (coursesServed === 3) {
             cancelAnimationFrame(timingAnimation);
