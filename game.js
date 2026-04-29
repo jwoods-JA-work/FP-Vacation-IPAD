@@ -120,19 +120,19 @@ const foodMenu = [
         title: "Build Your Taco!",
         base: "tortilla",
         toppings: ["meat", "lettuce", "cheese"],
-        folder: "Images/Mexico/Mexico Minigame 1/Taco/" // Path to taco images
+        folder: "Mexico/Mexico Minigame 1/Taco/" // Path to taco images
     },
     {
         title: "Build Your Tamale!",
         base: "husk",
         toppings: ["masa", "meat", "salsa"],
-        folder: "Images/Mexico/Mexico Minigame 1/Tamale/" // Make sure you create this folder & images!
+        folder: "Mexico/Mexico Minigame 1/Tamale/" // Make sure you create this folder & images!
     },
     {
         title: "Build Your Quesadilla!",
         base: "tortilla",
         toppings: ["cheese", "meat", "salsa"],
-        folder: "Images/Mexico/Mexico Minigame 1/Quesadilla/" // Make sure you create this folder & images!
+        folder: "Mexico/Mexico Minigame 1/Quesadilla/" // Make sure you create this folder & images!
     }
 ];
 
