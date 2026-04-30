@@ -10,20 +10,25 @@
 
     </head>
     <body>
-        <div id = "plane-ticket-screen"> 
-            <div class = "plane-ticket-card">
+<div id="plane-ticket-screen"> 
+            <div class="plane-ticket-card">
                 <h1>
                     You start your travels close to Paris, France. <br>
                     Choose which class you want to fly.
                 </h1>
+                
                 <div class="price-tag">
                     <div class="currency">$</div>
-                    <div class="amount">4000</div>
-                </div>
+                    <div class="amount"></div> </div>
+                
                 <img src="Paris/paris.png" class="paris-city">
-                <img src = "Paris/Paris Plane Tickets/paris-economy-class.png" class = "economy-class" onclick = "buyTicket(300,'paris-activity.html')">
-                <img src = "Paris/Paris Plane Tickets/paris-business-class.png" class = "business-class" onclick = "buyTicket(600,'paris-activity.html')">
-                <img src = "Paris/Paris Plane Tickets/paris-first-class.png" class = "first-class" onclick = "buyTicket(900,'paris-activity.html')">
+                
+                <div class="ticket-container">
+                    <img src="Paris/Paris Plane Tickets/paris-economy-class.png" class="economy-class" onclick="buyTicket(300,'paris-activity.html')">
+                    <img src="Paris/Paris Plane Tickets/paris-business-class.png" class="business-class" onclick="buyTicket(600,'paris-activity.html')">
+                    <img src="Paris/Paris Plane Tickets/paris-first-class.png" class="first-class" onclick="buyTicket(900,'paris-activity.html')">
+                </div>
+                
             </div>
         </div>
         <script src = "game.js"></script>
