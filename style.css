@@ -412,12 +412,12 @@ body {
 }
 
 .ticket-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 30px;
-    margin-top: 250px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates exactly two columns */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 300px; /* Pushed down to make room for the lowered image */
+    width: 100%;
 }
 
 .mexico-city {
@@ -438,9 +438,15 @@ body {
 .economy-class,
 .business-class,
 .first-class {
-    width: min(280px, 28vw);
+    width: min(260px, 38vw); /* Scales down perfectly on iPad */
     cursor: pointer;
     transition: transform 0.2s ease;
+}
+
+/* This is the magic trick! It forces the First Class ticket 
+   to span across both columns so it drops to the middle! */
+.first-class {
+    grid-column: span 2;
 }
 
 /**************** Mexico Games *************************/
