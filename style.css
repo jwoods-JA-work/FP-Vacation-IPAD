@@ -309,7 +309,7 @@ body{
 /* --- PRICE TAG HUD --- */
 .price-tag {
   position: absolute;
-  top: 30px;
+  top: 25px;
   right: 40px;
   z-index: 10; /* Keeps it floating above the map */
   
