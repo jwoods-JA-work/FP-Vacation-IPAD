@@ -23,10 +23,10 @@
             </p>
         </div>
 
-        <div class="map-container">
+<div class="map-container">
             <img src="worldmap1.png" class="map">
             
-            <img src="plane.png" class="plane" style="left: 150px; top: 260px;">
+            <img src="plane.png" class="plane" style="left: 12.5%; top: 37%;">
 
             <svg class="routes" viewBox="0 0 900 500">
                 <path d="M150 230 Q300 100 430 180" />
@@ -34,9 +34,9 @@
                 <path d="M450 320 Q600 200 700 240" />
             </svg>
 
-            <div class="marker-start" style="display: flex; align-items: center; justify-content: center; font-size: 50px; cursor: default; animation: none;">✅</div>
+            <div class="marker-start" style="display: flex; align-items: center; justify-content: center; font-size: clamp(30px, 5vw, 50px); cursor: default; animation: none;">✅</div>
             
-            <img src="pin.png" class="marker marker-1" style="animation: heartbeat 1.5s infinite; cursor: pointer; width: 80px; height: auto;" onclick="flyToNextLocation()">
+            <img src="pin.png" class="marker marker-1" style="animation: heartbeat 1.5s infinite; cursor: pointer; width: clamp(50px, 6vw, 80px); height: auto;" onclick="flyToNextLocation()">
             
             <div class="marker marker-2"></div>
             <div class="marker marker-3"></div>
