@@ -3,6 +3,48 @@ let correctPath = [];
 let currentStep = 0;
 
 /* ---------------------------
+   CUSTOM POPUP ENGINE
+----------------------------*/
+function gameAlert(message, nextAction) {
+    // 1. Create the dark overlay
+    const overlay = document.createElement("div");
+    overlay.id = "custom-alert-overlay";
+
+    // 2. Create the popup box
+    const box = document.createElement("div");
+    box.id = "custom-alert-box";
+
+    // 3. Add the message text
+    const text = document.createElement("div");
+    text.id = "custom-alert-text";
+    text.innerHTML = message; // We use innerHTML so we can use emojis and line breaks!
+
+    // 4. Create the OK button
+    const btn = document.createElement("button");
+    btn.id = "custom-alert-btn";
+    btn.innerText = "OK";
+    
+    // 5. What happens when they click OK?
+    btn.onclick = () => {
+        overlay.remove(); // Delete the popup
+        
+        // If we told it to go to a new page, go there!
+        if (typeof nextAction === "string") {
+            window.location.href = nextAction;
+        } 
+        // If we told it to run a function (like reset game), run it!
+        else if (typeof nextAction === "function") {
+            nextAction();
+        }
+    };
+
+    // 6. Put it all together and slap it on the screen!
+    box.appendChild(text);
+    box.appendChild(btn);
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+}
+/* ---------------------------
    INIT
 ----------------------------*/
 function initGame() {
