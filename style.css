@@ -309,7 +309,7 @@ body{
 /* --- PRICE TAG HUD --- */
 .price-tag {
   position: absolute;
-  top: 25px;
+  top: 30px;
   right: 40px;
   z-index: 10; /* Keeps it floating above the map */
   
@@ -408,7 +408,7 @@ body{
 .plane-ticket-card h1 {
     color: #2883d4;
     font-family: 'Titan One', sans-serif;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .ticket-container {
