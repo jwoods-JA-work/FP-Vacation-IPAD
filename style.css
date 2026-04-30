@@ -1677,7 +1677,15 @@ button {
     text-align: center;
     width: min(500px, 85vw);
     box-shadow: 10px 10px 0px #111;
-    animation: popUp 0.3s ease-out;
+    
+    /* FIX: Changed the animation name to alertPop */
+    animation: alertPop 0.3s ease-out; 
+}
+/* --- NEW: Custom animation just for the alert box --- */
+@keyframes alertPop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); } /* Slight bounce effect */
+    100% { transform: scale(1); }
 }
 
 #custom-alert-text {
