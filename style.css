@@ -401,6 +401,15 @@ body {
     font-size: 30px;
 }
 
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin-top: 250px;
+    flex-wrap: wrap;
+}
+
 .mexico-city {
     position: absolute;
     width: 250px;
