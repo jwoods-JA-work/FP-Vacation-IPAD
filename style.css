@@ -185,6 +185,7 @@ body{
 }
 
 .map-card p {
+    color: white;
     font-family: 'DM Sans', sans-serif;
     font-size: 28px;
     font-weight: bold;
