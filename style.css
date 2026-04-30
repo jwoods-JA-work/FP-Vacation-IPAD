@@ -1651,3 +1651,10 @@ body{
     box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
     user-select: all; /* Makes it so if they click the text, it highlights the whole code instantly to copy! */
 }
+
+/* --- IPAD FIX: PREVENT ZOOMING AND HIGHLIGHTING WHEN BUTTON MASHING --- */
+button {
+    touch-action: manipulation; /* Disables the double-tap-to-zoom feature on buttons */
+    user-select: none; /* Stops the button text from turning blue when tapped rapidly */
+    -webkit-user-select: none; /* Safari specific fix */
+}
