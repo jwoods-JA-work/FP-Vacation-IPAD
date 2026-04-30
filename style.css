@@ -422,7 +422,7 @@ body {
 
 .mexico-city {
     position: absolute;
-    top: 120px;
+    top: 160px; /* MOVED DOWN from 120px */
     left: 50%;
     transform: translateX(-50%);
 
