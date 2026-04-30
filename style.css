@@ -350,6 +350,16 @@ body {
   padding: 5px 30px 5px 20px;
   letter-spacing: 1px;
 }
+
+/* --- IPAD FIX: SHRINK THE PRICE TAG SO IT DOESN'T COVER TEXT --- */
+@media screen and (max-width: 1024px) {
+    .price-tag, .price-tag-africa {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.65); /* Shrinks the box so it fits! */
+        transform-origin: top right;
+    }
+}
 /**************** Mexico *************************/
 
 #plane-ticket-screen {
