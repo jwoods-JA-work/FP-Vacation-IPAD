@@ -567,6 +567,7 @@ body {
 }
 
 /* 2. The Background Image (Locked safely behind the buttons) */
+/* 2. The Background Image (Locked safely behind the buttons) */
 .mexico-background, .paris-background, .africa-background, .japan-background {
     position: absolute;
     top: 0;
@@ -576,7 +577,9 @@ body {
     object-fit: cover;
     border-radius: 20px;
     border: 5px solid white;
-    z-index: -1; /* This pushes the image behind the buttons */
+    
+    /* CHANGE THIS FROM -1 TO 0 */
+    z-index: 0; 
 }
 
 /* 3. The Activity Options (Scales dynamically based on screen width) */
