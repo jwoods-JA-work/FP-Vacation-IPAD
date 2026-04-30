@@ -1457,23 +1457,24 @@ body{
 }
 #start-tea-btn:active, #cool-btn:active { transform: translateY(4px); box-shadow: 0px 0px 0px #111; }
 
-/* --- VIP SUMO SHOWDOWN --- */
+/* --- VIP SUMO SHOWDOWN (RESPONSIVE FIX) --- */
 #sumo-ring {
-    width: 900px;
-    height: 300px;
+    width: min(800px, 90vw); /* Scales down perfectly on iPads */
+    height: clamp(150px, 20vw, 300px); /* Shrinks the height smoothly */
     background: #d4a373; /* Sand color */
     border: 6px solid #8b5a2b;
     border-radius: 50px;
     margin: 40px auto;
     position: relative;
+    overflow: hidden; /* Keeps the wrestler inside the ring if he gets pushed to the edge */
 }
 
 #sumo-wrestler {
-    font-size: 150px;
+    font-size: clamp(80px, 15vw, 150px); /* Emoji scales down slightly on smaller screens */
     position: absolute;
-    top: 5px;
+    top: 50%;
     left: 50%; /* Starts perfectly in the middle */
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%); /* Centers the emoji perfectly both vertically and horizontally */
     transition: left 0.1s;
 }
 
