@@ -1360,6 +1360,14 @@ body{
     top: 10px;
     left: 0px;
     transition: top 0.5s ease-in; /* Makes the drop smooth */
+    
+    /* --- NEW IPAD GRAPHICS FIXES --- */
+    transform: translateZ(0); /* Forces the iPad Graphics Card to draw it smoothly */
+    -webkit-transform: translateZ(0); /* Safari specific fix */
+    will-change: left, top; /* Tells the browser to prepare for fast movement */
+    
+    user-select: none; /* Stops the browser from drawing blue highlight lines */
+    -webkit-user-select: none; 
 }
 
 #the-prize {
