@@ -438,7 +438,7 @@ body {
 .economy-class,
 .business-class,
 .first-class {
-    width: min(280px, 42vw; /* Scales down perfectly on iPad */
+    width: min(260px, 38vw); /* Scales down perfectly on iPad */
     cursor: pointer;
     transition: transform 0.2s ease;
 }
