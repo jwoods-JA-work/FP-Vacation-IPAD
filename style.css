@@ -1,4 +1,4 @@
-body {
+body{
     margin:0;
 }
 
@@ -420,13 +420,17 @@ body {
     width: 100%;
 }
 
-.mexico-city {
+/* --- FIX: MAKE ALL CITY IMAGES CENTERED AND RESPONSIVE --- */
+.mexico-city,
+.paris-city,
+.africa-city,
+.japan-city {
     position: absolute;
-    top: 190px; /* MOVED DOWN from 120px */
+    top: 190px; 
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centers the image perfectly */
 
-    width: min(250px, 40vw);
+    width: min(250px, 40vw); /* Scales down on iPads */
     height: auto;
 
     border: 4px solid #111111;
@@ -434,6 +438,7 @@ body {
     box-shadow: 5px 5px 0px #111111;
 
     z-index: 1;
+}  z-index: 1;
 }
 .economy-class,
 .business-class,
@@ -756,18 +761,7 @@ body {
 
 /**************** Paris *************************/
 
-.paris-city {
-    position: absolute;
-    width: 250px;
-    height: auto;
-    left: 620px;
 
-      border: 4px solid #111111;
-  border-radius: 30px; 
-  
-  /* Scaled-down 3D shadow */
-  box-shadow: 5px 5px 0px #111111;
-}
 
 #paris-activity-screen {
     width: 100vw;
@@ -1039,21 +1033,6 @@ body {
   font-family: 'Fredoka', 'Titan One', sans-serif;
   color: #3f6619; 
 }
-
-
-.africa-city {
-    position: absolute;
-    width: 250px;
-    height: auto;
-    left: 620px;
-
-      border: 4px solid #111111;
-  border-radius: 30px; 
-  
-  /* Scaled-down 3D shadow */
-  box-shadow: 5px 5px 0px #111111;
-}
-
 
 #africa-activity-screen {
     width: 100vw;
