@@ -23,8 +23,8 @@ body {
 
 /*White card*/
 .start-card {
-    width: 760px;
-    padding: 45px 30px;
+    width: 500px;
+    padding: 30px 20px;
     text-align: center;
     border-radius: 10px;
     z-index: 2;
