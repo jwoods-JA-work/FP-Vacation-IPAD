@@ -292,7 +292,7 @@ function setupMaze() {
         for (let c = 0; c < 3; c++) {
             const tile = document.getElementById(`t-${r}-${c}`);
             if (tile) {
-                tile.style.background = "#e3e453"; // Standard tile color
+                tile.style.background = "#22404d"; // Standard tile color
                 if (r === 2 && c === 2) {
                     tile.innerHTML = "💎"; // Ensure treasure stays on the last tile
                 } else {
@@ -306,7 +306,7 @@ function setupMaze() {
     correctPath.forEach(([r, c]) => {
         const tile = document.getElementById(`t-${r}-${c}`);
         if (tile) {
-            tile.style.background = "#f4d35e"; // glow color
+            tile.style.background = "#e3e453"; // glow color
         }
     });
 
