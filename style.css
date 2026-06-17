@@ -1509,14 +1509,15 @@ body{
 }
 
 #sumo-game-screen h1 {
-    color: #2883d4;
-    font-family: 'Titan One', sans-serif;
+    color: #008890c;
+    font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     margin-bottom: 10px;
 }
 
 #sumo-game-screen p {
     color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin-bottom: 20px;
 }
