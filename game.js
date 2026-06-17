@@ -267,7 +267,7 @@ function setupMaze() {
             }
         });
         canClickPath = true; 
-    }, 3000);
+    }, 2000);
 }
 
 function selectTile(row, col, tile) {
