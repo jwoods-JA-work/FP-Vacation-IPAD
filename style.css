@@ -1474,23 +1474,23 @@ body{
 #tea-game-screen {
     width: 100vw;
     height: 100vh;
-    background: #fdfbf7; /* A soft, clean Japanese paper white */
+    background: linear-gradient(to bottom, #3c637a, #46a3b7, #4cbcd0, #8ec953, #e1e66c);
     text-align: center;
     padding-top: 40px;
 }
 
 #tea-game-screen h1 {
-    color: #e74c3c; /* Deep red looks amazing on white */
-    font-family: 'Titan One', sans-serif;
+    color: #fff; /* Deep red looks amazing on white */
+    font-family: 'Montserrat', sans-serif;
     font-size: 60px;
     margin-bottom: 10px;
 }
 
 #tea-game-screen p {
-    color: #333333; /* Dark gray text so it is readable on the white background! */
+    color: #fff; /* Dark gray text so it is readable on the white background! */
     font-size: 20px;
     margin-bottom: 20px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
