@@ -255,6 +255,13 @@ function addIngredient(ingredient) {
 /* ---------------------------
    PYRAMID MEMORY MAZE
 ----------------------------*/
+/* ========================================================
+   TOKYO / MAZE MINI GAME: PATH MEMORIZER
+======================================================= */
+let correctPath = [];
+let currentStep = 0;
+let canClickPath = false; // NEW STATE FLAG: Hard locks grid selection
+
 function generatePath() {
     let path = [[0, 0]]; // Always start at top-left
     let r = 0, c = 0;
@@ -278,13 +285,14 @@ function generatePath() {
 function setupMaze() {
     correctPath = generatePath();
     currentStep = 0;
+    canClickPath = false; // Disable clicks completely during path reveal
 
     // Reset all tiles visually before starting (useful if the player restarts)
     for (let r = 0; r < 3; r++) {
         for (let c = 0; c < 3; c++) {
             const tile = document.getElementById(`t-${r}-${c}`);
             if (tile) {
-                tile.style.background = "#d9d9d9"; // Standard tile color
+                tile.style.background = "#e3e453"; // Standard tile color
                 if (r === 2 && c === 2) {
                     tile.innerHTML = "💎"; // Ensure treasure stays on the last tile
                 } else {
@@ -307,14 +315,19 @@ function setupMaze() {
         correctPath.forEach(([r, c]) => {
             const tile = document.getElementById(`t-${r}-${c}`);
             if (tile) {
-                tile.style.background = "#d9d9d9"; // Reset back to default
+                tile.style.background = "#22404d"; // Reset back to default
             }
         });
+        
+        canClickPath = true; // FIX: Unlocks input interaction only when glow fades!
     }, 4000);
 }
 
 /* ---------------- TILE CLICK ---------------- */
 function selectTile(row, col, tile) {
+    // FIX: Immediately rejects interaction if input is locked down
+    if (!canClickPath) return;
+
     const expected = correctPath[currentStep];
 
     // Prevent errors if they click too fast or after the game ends
@@ -323,14 +336,16 @@ function selectTile(row, col, tile) {
     if (row === expected[0] && col === expected[1]) {
         // Correct step!
         tile.innerHTML = "🧍";
-        tile.style.background = "#90be6d"; // Success green
+        tile.style.background = "#8fc440"; // Success green
 
         currentStep++;
 
         // Check if they reached the end
         if (currentStep === correctPath.length) {
-            budget +=150;
-            localStorage.setItem("budget",budget)
+            canClickPath = false; // Re-lock selection so they can't double-click at victory
+            budget += 150;
+            if (typeof localStorage !== 'undefined') localStorage.setItem("budget", budget);
+            
             setTimeout(() => {
                gameAlert("🎉 Treasure found! +$150", "map2.html");
             }, 300);
@@ -339,8 +354,8 @@ function selectTile(row, col, tile) {
     } else {
         // Wrong step!
         budget -= 50;
-        localStorage.setItem("budget", budget);
-        updateBudgetUI();
+        if (typeof localStorage !== 'undefined') localStorage.setItem("budget", budget);
+        if (typeof updateBudgetUI === "function") updateBudgetUI();
 
         gameAlert("💀 Trap! -$50");
     }
