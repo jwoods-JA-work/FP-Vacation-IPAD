@@ -82,7 +82,7 @@ body{
     width: 220px;
     height: 120px;
     top: 210px;
-    left: 60px;
+    left: 30px;
 
     /* creates "puffy" cloud bumps */
     box-shadow:
@@ -96,7 +96,7 @@ body{
     width: 220px;
     height: 120px;
     bottom: 160px;
-    right: 240px;
+    right: 200px;
 
     box-shadow:
         60px 0 #285f74,
