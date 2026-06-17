@@ -999,7 +999,7 @@ function dropClaw() {
     const distance = Math.abs(clawPos - 265);
 
     setTimeout(() => {
-        if (distance < 30) {
+        if (distance < 50) {
             // Close enough to grab it!
             budget += 150;
             localStorage.setItem("budget", budget);
