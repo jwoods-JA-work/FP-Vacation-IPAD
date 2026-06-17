@@ -1679,7 +1679,7 @@ button {
 }
 
 #custom-alert-box {
-    background: white;
+    background: 22404d;
     border: 6px solid #111;
     border-radius: 20px;
     padding: 40px;
@@ -1698,7 +1698,7 @@ button {
 }
 
 #custom-alert-text {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(20px, 4vw, 28px);
     font-weight: bold;
     color: #333;
@@ -1706,8 +1706,8 @@ button {
 }
 
 #custom-alert-btn {
-    font-family: 'Titan One', sans-serif;
-    background: #2883d4;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #00c0ca;
     color: white;
     border: 4px solid #111;
     font-size: clamp(20px, 4vw, 26px);
