@@ -1684,7 +1684,7 @@ button {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(20px, 4vw, 28px);
     font-weight: bold;
-    color: #333;
+    color: #fff;
     margin-bottom: 30px;
 }
 
