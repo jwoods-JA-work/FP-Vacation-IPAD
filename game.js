@@ -975,10 +975,10 @@ function initClawGame() {
         if (clawDropped) return; // Stop swinging if dropped
 
         if (clawMovingRight) {
-            clawPos += 22; // Speed of the claw
+            clawPos += 15; // Speed of the claw
             if (clawPos > 500) clawMovingRight = false; // Right wall
         } else {
-            clawPos -= 22;
+            clawPos -= 15;
             if (clawPos < 0) clawMovingRight = true; // Left wall
         }
         
