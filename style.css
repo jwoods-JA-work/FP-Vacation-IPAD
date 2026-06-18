@@ -1127,19 +1127,13 @@ body{
 #safari-game-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);
     text-align: center;
     padding-top: 40px;
 }
 
 #safari-game-screen h1 {
-    color: #00889c;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     margin-bottom: 10px;
