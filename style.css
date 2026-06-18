@@ -456,7 +456,7 @@ body{
 #food-game-screen {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #3c637a, #46a3b7, #4cbcd0, #8ec953, #e1e66c);
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
     text-align: center;
     padding-top: 40px;
 }
@@ -622,13 +622,7 @@ body{
     width: 100vw;
     height: 100vh;
     text-align: center;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
     padding-top: 40px;
 }
 
