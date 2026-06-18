@@ -242,7 +242,7 @@ function setupMaze() {
         for (let c = 0; c < 3; c++) {
             const tile = document.getElementById(`t-${r}-${c}`);
             if (tile) {
-                tile.style.background = "#22404d"; 
+                tile.style.background = "#00c0ca"; 
                 if (r === 2 && c === 2) {
                     tile.innerHTML = "💎"; 
                 } else {
@@ -255,7 +255,7 @@ function setupMaze() {
     correctPath.forEach(([r, c]) => {
         const tile = document.getElementById(`t-${r}-${c}`);
         if (tile) {
-            tile.style.background = "#e3e453"; 
+            tile.style.background = "#ff5a79"; 
         }
     });
 
@@ -263,7 +263,7 @@ function setupMaze() {
         correctPath.forEach(([r, c]) => {
             const tile = document.getElementById(`t-${r}-${c}`);
             if (tile) {
-                tile.style.background = "#22404d"; 
+                tile.style.background = "#00c0ca"; 
             }
         });
         canClickPath = true; 
