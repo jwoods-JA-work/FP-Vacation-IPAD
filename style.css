@@ -811,14 +811,7 @@ body{
 #louvre-game-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #736d6d 20px
-    );
-
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
     text-align: center;
     padding-top: 40px;
 }
