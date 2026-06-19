@@ -394,7 +394,11 @@ function initEiffelGame() {
 
     photosTaken = 0;
     
-    eiffelInterval = setInterval(() => {
+    // Clear any previous interval just in case
+    if (eiffelInterval) clearInterval(eiffelInterval);
+
+    // Helper function to create a target icon
+    function spawnTarget() {
         const target = document.createElement("div");
         target.className = "popup-target";
         
@@ -429,8 +433,15 @@ function initEiffelGame() {
         };
         
         camera.appendChild(target);
+        // Despawn after 1.5 seconds if not clicked
         setTimeout(() => { if(target.parentNode) target.remove(); }, 1500);
-    }, 1000);
+    }
+
+    // 1. Spawn the first target immediately!
+    spawnTarget();
+    
+    // 2. Set the interval to spawn new targets quicker (e.g., every 600ms instead of 1000ms)
+    eiffelInterval = setInterval(spawnTarget, 600);
 }
 
 /* ========================================================
