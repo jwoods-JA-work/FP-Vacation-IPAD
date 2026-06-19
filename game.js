@@ -402,7 +402,7 @@ function initEiffelGame() {
         const target = document.createElement("div");
         target.className = "popup-target";
         
-        const isPigeon = Math.random() < 0.3;
+        const isPigeon = Math.random() < 0.5;
         target.innerHTML = isPigeon ? "🐦" : ["🏛️", "⛪️", "🏰"][Math.floor(Math.random() * 3)];
         
         target.style.left = Math.floor(Math.random() * 500) + "px";
@@ -441,7 +441,7 @@ function initEiffelGame() {
     spawnTarget();
     
     // 2. Set the interval to spawn new targets quicker (e.g., every 600ms instead of 1000ms)
-    eiffelInterval = setInterval(spawnTarget, 600);
+    eiffelInterval = setInterval(spawnTarget, 400);
 }
 
 /* ========================================================
