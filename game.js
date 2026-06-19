@@ -746,6 +746,10 @@ function trackAnimal(event) {
     const distance = Math.sqrt((diffX * diffX) + (diffY * diffY));
 
     if (distance < 45) {
+        // 1. Move targets out of bounds IMMEDIATELY so they can't be clicked again
+        targetX = -100;
+        targetY = -100;
+
         if(radar) {
             radar.innerText = "Radar: 🎯 ANIMAL SPOTTED!";
             radar.style.color = "#90be6d"; 
@@ -754,8 +758,8 @@ function trackAnimal(event) {
         const animalIcon = document.createElement("div");
         animalIcon.className = "found-animal";
         animalIcon.innerHTML = currentAnimal;
-        animalIcon.style.left = targetX + "px";
-        animalIcon.style.top = targetY + "px";
+        animalIcon.style.left = clickX + "px"; // Optional: centers it where they actually clicked
+        animalIcon.style.top = clickY + "px";
         grass.appendChild(animalIcon);
 
         animalsFound++;
@@ -784,13 +788,18 @@ function trackAnimal(event) {
             radar.style.color = "#f4d35e"; 
         }
     } else {
-        if(radar) {
-            radar.innerText = "Radar: ❄️ COLD... Way off.";
-            radar.style.color = "#87ceeb"; 
+        // 2. Prevent a penalty if they click the same spot during the 1.5s fade-out
+        // Since we set targetX to -100, a click on the old spot would trigger a "COLD" penalty.
+        // We block that by checking if a transition is currently happening.
+        if (currentAnimal === big5List[animalsFound]) { 
+            if(radar) {
+                radar.innerText = "Radar: ❄️ COLD... Way off.";
+                radar.style.color = "#87ceeb"; 
+            }
+            budget -= 10;
+            localStorage.setItem("budget", budget);
+            updateBudgetUI();
         }
-        budget -= 10;
-        localStorage.setItem("budget", budget);
-        updateBudgetUI();
     }
 }
 
