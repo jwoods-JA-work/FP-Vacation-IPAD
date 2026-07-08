@@ -244,9 +244,14 @@ function setupMaze() {
             if (tile) {
                 tile.style.background = "#00c0ca"; 
                 if (r === 2 && c === 2) {
-                    tile.innerHTML = "💎"; 
+                   tile.innerHTML = "🪎";
+                   tile.style.fontSize = "2rem";
+                   tile.style.display = "flex";
+                   tile.alignItems = "center";
+                   tile.justifyCenter = "center";
                 } else {
-                    tile.innerHTML = "";
+                   tile.innerHTML = "";
+                   tile.style.fontSize = "";
                 }
             }
         }
