@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
 body{
     margin:0;
 }
@@ -5,13 +7,11 @@ body{
 /*Black Background*/
 #start-screen {
     /* BLACK + DIAGONAL STRIPES */
-    background: repeating-linear-gradient(
-        -45deg,          /* direction: down-left */
-        #000000,         /* dark stripe */
-        #000000 10px,
-        #111111 10px,    /* slightly lighter stripe */
-        #111111 20px
-    );    width: 100vw;
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    width: 100vw;
     height: 100vh;
 
     display: flex;
@@ -30,10 +30,9 @@ body{
     z-index: 2;
 
     /* BASE COLOR */
-    background-color: #22404d;
+    background: #00889c;
+    border: 6px solid #22404d;
 
-    /* DIAMOND PATTERN */
-    background: radial-gradient(circle,#285f74 0%, #22404d 80%);
 
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
@@ -57,7 +56,7 @@ body{
 .start-card button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    background: #00c0ca;
+    background: #22404d;
     color: white;
     border: none;
     font-size: clamp(20px, 4vw, 30px);
@@ -73,7 +72,7 @@ body{
 
 .cloud {
     position: absolute;
-    background:#285f74;
+    background:#fff;
     border-radius: 50%;
     z-index: 1;
 }
@@ -86,9 +85,9 @@ body{
 
     /* creates "puffy" cloud bumps */
     box-shadow:
-        60px 0 #285f74,
-        120px 20px #285f74,
-        30px 40px #285f74;
+        60px 0 #fff,
+        120px 20px #fff,
+        30px 40px #fff;
 }
 
 /* BOTTOM RIGHT CLOUD */
@@ -99,9 +98,9 @@ body{
     right: 100px;
 
     box-shadow:
-        60px 0 #285f74,
-        120px 20px #285f74,
-        30px 40px #285f74;
+        60px 0 #fff,
+        120px 20px #fff,
+        30px 40px #fff;
 }
 .flag-carousel {
     position: absolute;
@@ -147,14 +146,10 @@ body{
 #map-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
-
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,7 +171,7 @@ body{
 }
 
 .map-card h1 {
-    color: #00889c;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 80px;
@@ -317,15 +312,15 @@ body{
   align-items: stretch; 
   
   /* Colors & Scaled-down Borders */
-  background-color: #ffc52d; 
-  border: 6px solid #22404d;
+  background-color: #00763d; 
+  border: 6px solid #8fc440;
   border-radius: 60px; 
   
   /* Scaled-down 3D shadow */
   box-shadow: 8px 8px 0px #22404d;
   
   font-family: 'Montserrat', sans-serif;
-  color: #00763d; 
+  color: #fff; 
 }
 
 .currency {
@@ -349,7 +344,7 @@ body{
   font-size: 55px;
   padding: 5px 30px 5px 20px;
   letter-spacing: 1px;
-    color: #00763d;
+    color: #fff;
 }
 
 /* --- IPAD FIX: SHRINK THE PRICE TAG SO IT DOESN'T COVER TEXT --- */
@@ -365,13 +360,10 @@ body{
 
 #plane-ticket-screen {
     /* BLACK + DIAGONAL STRIPES */
-    background: repeating-linear-gradient(
-        -45deg,          /* direction: down-left */
-        #000000,         /* dark stripe */
-        #000000 10px,
-        #111111 10px,    /* slightly lighter stripe */
-        #111111 20px
-    );    
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;    
     width: 100vw;
     height: 100vh;
 
@@ -393,13 +385,15 @@ body{
     border-radius: 10px;
     z-index: 2;
     /* BASE COLOR */
-    background-color: #22404d;
+    background-image: url('Images/card-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+        border: 4px solid #fff;
+
 
     /* DIAMOND PATTERN */
-    background: radial-gradient(circle, #285F74 0%, #22404D 80%);
 
 
-    background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
 
@@ -515,13 +509,10 @@ body{
 #mexico-activity-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
 
     display: flex;
     flex-direction: column;
@@ -535,7 +526,7 @@ body{
 }
 
 .activity-header h1 {
-    color: #00889c;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
 }
@@ -572,7 +563,7 @@ body{
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    border: 5px solid white;
+    border: 5px solid #111;
     
     /* CHANGE THIS FROM -1 TO 0 */
     z-index: 0; 
@@ -622,8 +613,7 @@ body{
     width: 100vw;
     height: 100vh;
     text-align: center;
-    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
-    padding-top: 40px;
+background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
 }
 
 #pyramid-game-screen h1 {
@@ -747,13 +737,10 @@ body{
 #paris-activity-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
 
     display: flex;
     flex-direction: column;
@@ -768,6 +755,7 @@ body{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
+
     text-align: center;
     padding-top: 40px;
 }
@@ -811,8 +799,7 @@ body{
 #louvre-game-screen {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);
-    padding-top: 40px;
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
     text-align: center;
     padding-top: 40px;
 }
@@ -922,6 +909,15 @@ body{
 }
 #serve-btn:hover { transform: scale(1.05); }
 
+
+#louvre-game-screen {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
+    text-align: center;
+    padding-top: 40px;
+}
+
 #michelin-game-screen h1 {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -939,7 +935,8 @@ body{
 #michelin-game-screen {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    padding-top: 40px;
+    background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);
+    padding-top: 40px;
     text-align: center;
     padding-top: 40px;
 }
@@ -948,13 +945,10 @@ body{
 #africa-activity-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
 
     display: flex;
     flex-direction: column;
@@ -969,6 +963,7 @@ body{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);
+    padding-top: 40px;
     text-align: center;
     padding-top: 40px;
 }
@@ -1200,13 +1195,10 @@ body{
 #japan-activity-screen {
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
 
     display: flex;
     flex-direction: column;
@@ -1436,17 +1428,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: repeating-linear-gradient(
-        -45deg,
-        #000000,
-        #000000 10px,
-        #111111 10px,
-        #111111 20px
-    );
+    background-image: url('Images/ja-background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .end-card {
-    background: #00889c;
+    background-image: url('Images/card-back.png');
     padding: 50px;
     border-radius: 20px;
     text-align: center;
@@ -1461,12 +1450,12 @@ body{
     margin-bottom: 10px;
 }
 
-.victory-card h1 { color: #00763d; } /* Green text for winning */
+.victory-card h1 { color: #fff; } /* Green text for winning */
 .gameover-card h1 { color: #e74c3c; } /* Red text for losing */
 
 .end-card h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -1483,7 +1472,7 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 24px;
     padding: 15px 40px;
-    background: #22404d;
+    background: #00889c;
     color: white;
     border: 4px solid #111;
     border-radius: 30px;
