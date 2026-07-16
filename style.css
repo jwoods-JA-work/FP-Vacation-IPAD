@@ -7,7 +7,7 @@ body{
 /*Black Background*/
 #start-screen {
     /* BLACK + DIAGONAL STRIPES */
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -146,7 +146,7 @@ body{
 #map-screen {
     width: 100vw;
     height: 100vh;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -360,7 +360,7 @@ body{
 
 #plane-ticket-screen {
     /* BLACK + DIAGONAL STRIPES */
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;    
@@ -385,7 +385,7 @@ body{
     border-radius: 10px;
     z-index: 2;
     /* BASE COLOR */
-    background-image: url('Images/card-back.png');
+    background-image: url('card-back.png');
     background-repeat: no-repeat;
     background-size: cover;
         border: 4px solid #fff;
@@ -509,7 +509,7 @@ body{
 #mexico-activity-screen {
     width: 100vw;
     height: 100vh;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -737,7 +737,7 @@ background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    pa
 #paris-activity-screen {
     width: 100vw;
     height: 100vh;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -945,7 +945,7 @@ background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    pa
 #africa-activity-screen {
     width: 100vw;
     height: 100vh;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -1195,7 +1195,7 @@ background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    pa
 #japan-activity-screen {
     width: 100vw;
     height: 100vh;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
@@ -1428,14 +1428,14 @@ background: linear-gradient(to right, #203e48, #185261, #007c92, #008fa9);    pa
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('Images/ja-background.png');
+    background-image: url('ja-background.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center; 
 }
 
 .end-card {
-    background-image: url('Images/card-back.png');
+    background-image: url('card-back.png');
     padding: 50px;
     border-radius: 20px;
     text-align: center;
